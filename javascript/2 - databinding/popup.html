@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script>
+            let one =()=>{
+                alert("Hi, your email sent successfully!");
+            }
+
+            let two =()=>{
+                let a = confirm("Are you sure to delete your account?");
+                alert(a);
+            }
+
+            let three = ()=>{
+                let a = prompt("Enter your Mobile No.");
+                alert(a);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Javascript type of popup Window Example</h1>
+        <button onclick="one()">Alert Test</button>
+        <button onclick="two()">Confirm Test</button>
+        <button onclick="three()">Prompt Test</button>
+
+        <p>
+            Alert() is built in function of javscript.
+            It is used to give confirmation message to user.
+        </p>
+
+        <p>
+            confirm() is pre-defined function of javascript.
+            It is used to take confirmation from user.
+        </p>
+
+        <p>
+            propmt() is a function of javascript, used to collect input from user via popup window.
+        </p>
+    </body>
+</html>

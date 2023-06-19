@@ -1,0 +1,50 @@
+body{
+    margin: 30px 10% 50px;
+}
+
+header{
+    text-align: center;
+    padding: 15px;
+}
+
+button{
+    color: blue;
+    padding: 10px 30px 10px;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+button:focus{
+    background-color: purple;
+    color: white;
+}
+
+#container{
+    min-height: 370px;
+
+}
+
+footer{
+    padding: 15px ;
+    text-align: center;
+    color: blue;
+    border-top: 10px dashed orange;
+}
+
+h1{
+    color: green;
+    font-size: 65px;
+    text-align: center;
+    margin: 10px;
+}
+
+.mycomment{
+    margin: 2%;
+    padding: 2%;
+    width: 40%;
+    background-color: purple;
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: top;
+}

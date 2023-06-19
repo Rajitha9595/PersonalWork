@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <h1>About sessionStorage - </h1>
+        <p>
+            sessionStorage is part of web storage. It used to store data in browser memory for
+            permanent but we can erase the data from browser memory.
+        </p>
+        <p>
+            How to create session storage?
+            sessionStorage.setItem()
+        </p>
+        <p>
+            How to fetch data from session storage?
+            sessionStorage.getItem()
+        </p>
+        <p>
+            How to clear data from session storage?
+            sessionStorage.clear()
+        </p>
+        <h1>Create sessionStorage</h1>
+        <p>
+            Your Full Name: <input type="text" id="fname"/>
+        </p>
+        <p>
+            Your MobileNo: <input type="number" id="mobile"/>
+        </p>
+        <p>
+            Your Education: <input type="text" id="edu"/>
+        </p>
+        <button onclick="save()">Save</button>
+
+        <p>
+            <a href="webstorage.html">Show My Data</a>
+        </p>
+        <script>
+            let save=()=>{
+                let name = document.getElementById("fname").value;
+                let mobile = document.getElementById("mobile").value;
+                let edu = document.getElementById("edu").value;
+                sessionStorage.setItem("fullname", name);
+                sessionStorage.setItem("mobile", mobile);
+                sessionStorage.setItem("education", edu);
+                alert("The data stored in session storage");
+            }
+        </script>
+    </body>
+</html>

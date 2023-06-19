@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <style>
+            header{
+                text-align: center;
+            }
+
+            #container{
+                width: 80%;
+                margin: auto;
+            }
+
+            #container p{
+                font-size: 40px;
+                display: inline-block;
+                width: 24%;
+            }
+        </style>
+        <script>
+            let booklist = ["html", "css", "bootstrap"];
+            /*Booklist start here*/
+            const getbook = () => {
+                let data = "";
+                booklist.map((bookname, index) => {
+                    data = data + "<p>" + bookname + "<br/><button onclick='delbook("+ index +")'>Delete</button></p>";
+                })
+                document.getElementById("container").innerHTML = data;
+            }
+            /*Booklist end here*/
+
+            const delbook = (index) => {
+                booklist.splice(index, 1); 
+                // splice(index of array, no. of elements to delete from given position)
+                getbook(); // calling to reload the list after delete
+            }
+
+            const savebook = () => {
+                let newbook = document.getElementById("mybook").value;
+                booklist.push(newbook); // add new ietm to end of array
+                getbook(); // calling to reload the list
+                document.getElementById("mybook").value = ""; // to clear the text box
+                document.getElementById("message").innerText = newbook + " added successfully..."
+            }
+        </script>
+    </head>
+    <body onload="getbook()">
+        
+        <header>
+            <h1>Javascript - Array, Add, List, Delete</h1>
+            Enter Book Name: <input type="text" id="mybook"/>
+            <button onclick="savebook()">Save Book</button>
+            <button onclick="getbook()">Book List</button>
+            <p id="message"></p>
+        </header>
+        
+        <div id="container"></div>
+    </body>
+</html>

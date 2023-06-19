@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <style>
+            .mynumber{
+                font-size: 70px;
+                display: inline-block;
+                width: 20%;
+                color: blue;
+                text-align: center;
+            }
+
+            .orange{
+                color: orange;
+            }
+
+            .green{
+                color: green;
+            }
+
+            .red{
+                color: red;
+            }
+
+            body{
+                text-align: center;
+            }
+
+            button:focus{
+                background: purple;
+                color: white;
+            }
+        </style>
+        <script>
+            let one=()=>{
+                let data ="";
+                for(let i=1;i<=10;i++){
+                    //data = data + i +"<br/>";
+                    data = data + "<p class='mynumber'>"+ i + "</p>";
+                }
+                document.getElementById("container").innerHTML = data;
+            }
+
+            let two=()=>{
+                let data = "";
+                for(let i=11;i<=20;i++){
+                    data = data + "<p class='mynumber orange'>"+ i + "</p>";
+                }
+                document.getElementById("container").innerHTML = data;
+            }
+
+            let three=()=>{
+                let data = "";
+                for(let i=1;i<=20;i++){
+                    if(i%2==0){
+                        data = data + "<p class='mynumber green'>"+ i + "</p>";
+                    }
+                }
+                document.getElementById("container").innerHTML = data;
+            }
+
+            let four=()=>{
+                let data = "";
+                for(let i=1;i<=20;i++){
+                    if(!(i%2==0)){
+                        data = data + "<p class='mynumber red'>"+ i + "</p>";
+                    }
+                }
+                document.getElementById("container").innerHTML = data;
+            }
+
+            let booklist = ["html", "css", "bootstrap", "js", "react", "nodejs"];
+
+            let five = () => {
+                let data = "";
+                for(let i=0; i<booklist.length;i++){
+                    data = data + "<p class='mynumber'>"+ booklist[i] + "</p>";
+                }
+                document.getElementById("container").innerHTML = data;
+            }
+
+            let six = () => {
+                let newbook = prompt("Enter Book Name");
+                booklist.push(newbook);
+                five();
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Javascript Loop Example</h1>
+        <p>
+            <button onclick="one()">Print 1 to 10</button>
+            <button onclick="two()">Print 11 to 20</button>
+            <button onclick="three()">Print 1 to 20 Even No.</button>
+            <button onclick="four()">Print 1 to 20 Odd No.</button>
+            <button onclick="five()">Book List</button>
+            <button onclick="six()">Add Book</button>
+        </p>
+
+        <div id="container"></div>
+    </body>
+</html>

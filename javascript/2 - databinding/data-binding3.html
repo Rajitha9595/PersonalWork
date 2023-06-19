@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script>
+            let one=()=>{
+                
+                let fullname = document.getElementById("fname").value;
+                document.getElementById("container").innerText=fullname;
+                document.getElementById("total").innerText=fullname.length;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>.innerText and .value Example</h1>
+
+        Enter Your Name : <input type="text" id="fname" value="Ganesh" onkeyup="one()"/>
+        <h1 id="container"></h1>
+
+        <p id="total"></p>
+        
+    </body>
+</html>

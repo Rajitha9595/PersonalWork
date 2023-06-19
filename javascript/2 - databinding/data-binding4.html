@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script>
+            let one=()=>{
+                
+                let fullname = document.getElementById("fname").value;
+                document.getElementById("container").innerText=fullname;
+                document.getElementById("total").innerText=fullname.length;
+                document.getElementById("pending").innerText=200-fullname.length;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>.innerText and .value Example</h1>
+
+        <textarea type="text" id="fname" value="" onkeyup="one()" rows="10" cols="40" maxlength="200"></textarea>
+        
+        <p id="container"></p>
+
+        <h2 id="total"></h2>
+        <p>
+            <label id="pending">200 </label> characters are left out of 200
+        </p>
+    </body>
+</html>

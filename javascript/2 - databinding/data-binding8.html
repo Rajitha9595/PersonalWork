@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            let allbook=[
+                {name:"html",       price:4000, Qty:10, Author:"Raj"},
+                {name:"css",        price:5000, Qty:11, Author:"Ganesh"},
+                {name:"javascript", price:7000, Qty:12, Author:"Sai"},
+                {name:"React Js",   price:9000, Qty:13, Author:"Suman"},
+                {name:"Node JS",    price:4000, Qty:14, Author:"Manish"}
+            ];
+            let getbook = () => {
+                document.getElementById("total").innerText = allbook.length + " - Books";
+                let data = "";
+                allbook.map((book, index) =>{
+                    data = data + "<tr>";
+                    data = data + "<td>"+index+"</td>";
+                    data = data + "<td>"+book.name+"</td>";
+                    data = data + "<td>"+book.price+"</td>";
+                    data = data + "<td>"+book.Qty+"</td>";
+                    data = data + "<td>"+book.Author+"</td>";
+                    data = data + "<td> <button onclick='delbook("+index+")'>Delete</button> </td>";
+                    data = data + "</tr>";
+                })
+                document.getElementById("booklist").innerHTML = data; 
+                //sending list of tr to tbody in html block
+            }
+
+            const save = () => {
+                let bookname = document.getElementById("bname").value;
+                let bookprice = document.getElementById("bprice").value;
+                let bookqty = document.getElementById("bqty").value;
+                let bookauthor = document.getElementById("bauthor").value;
+                let newbook = {name:bookname, price:bookprice, Qty:bookqty, Author:bookauthor};
+                allbook = allbook.concat(newbook); // merge or combine one obj with array of obj
+                getbook();
+
+                // clear the input fields after adding the value to array
+
+                document.getElementById("bname").value = "";
+                document.getElementById("bprice").value = "";
+                document.getElementById("bqty").value = "";
+                document.getElementById("bauthor").value = "";
+            }
+
+            const delbook = (index) => {
+                allbook.splice(index,1);
+                getbook();
+            }
+        </script>
+    </head>
+    <body onload="getbook()">
+        <h1 id="total" align="center">0 Books</h1>
+        <table align="left" cellpadding="10">
+            <tr>
+                <th>Book Name</th>
+                <td><input type="text" id="bname"/></td>
+            </tr>
+            <tr>
+                <th>Book Price</th>
+                <td><input type="number" id="bprice"/></td>
+            </tr>
+            <tr>
+                <th>Quantity</th>
+                <td><input type="number" id="bqty"/></td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td><input type="text" id="bauthor"/></td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <button onclick="save()">Save Book</button>
+                </th>
+            </tr>
+        </table>
+        <table align="right" cellpadding="10" border="10" bordercolor="red" cellspacing="0" width="60%">
+            <thead>
+                <tr align="left">
+                    <th>Sl No.</th>
+                    <th>Book Name</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Author</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="booklist">
+
+            </tbody>
+        </table>
+    </body>
+</html>

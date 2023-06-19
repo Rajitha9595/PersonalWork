@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script>
+            let message="<h1>Welcome to Javascript</h1> <p>It very popular</P>"
+
+            let one=()=>{
+               // document.write(message);
+                document.getElementById("container").innerText=message;
+            }
+
+            let two=()=>{
+                document.getElementById("container").innerHTML=message;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>HTML and Javascript .innertext and innerHTML Example</h1>
+        <button onclick="one()">innerText</button>
+        <button onclick="two()">innerHTML</button>
+        <br/><br/>
+        <div id="container">No Data</div>
+    </body>
+</html>

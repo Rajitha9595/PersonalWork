@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            fieldset{
+                width: 35%;
+                padding: 2%;
+                margin: 2%;
+                display: inline-block;
+                vertical-align: top;
+                border: 5px solid blue;
+            }
+            legend{
+                background-color: blue;
+                color: white;
+                font-size: 30px;
+            }
+        </style>
+        <script>
+            let getlocal = () =>{
+                let data = "<p> Full Name: "+localStorage.getItem("fullname")+"</p>";
+                data = data + "<p> MobileNo: "+localStorage.getItem("mobile")+"</p>";
+                data = data + "<p> Education: "+localStorage.getItem("education")+"</p>";
+                document.getElementById("localdata").innerHTML = data;
+            }
+
+            let getsession = () =>{
+                let data = "<p> Full Name: "+sessionStorage.getItem("fullname")+"</p>";
+                data = data + "<p> MobileNo: "+sessionStorage.getItem("mobile")+"</p>";
+                data = data + "<p> Education: "+sessionStorage.getItem("education")+"</p>";
+                document.getElementById("sessiondata").innerHTML = data;
+            }
+
+            let clearLocal = () => {
+                localStorage.clear();
+                window.location.reload("");
+            }
+
+            let clearSession = () => {
+                sessionStorage.clear();
+                window.location.reload("");
+            }
+
+        </script>
+    </head>
+    <body onload="getlocal(), getsession()">
+        <h1>Data from web storage</h1>
+        <fieldset>
+            <legend>localStorage</legend>
+            <p>The localStorage data we can access in same tab and also in new tab</p>
+            <p>The localStorage hold the data even if the browser got closed by mistake. We can access
+                localStorage data after re-opening the browser.
+            </p>
+            <div id="localdata"></div>
+            <a href="local.html">Edit</a>
+            <br/>
+            <br/>
+            <button onclick="clearLocal()">Clear All</button>
+        </fieldset>
+
+        <fieldset>
+            <legend>sessionStorage</legend>
+            <p>The sessionStorage data we can access only in same tab</p>
+            <p>>The sessionStorage loose the data if the browser got closed by mistake.</p>
+            <div id="sessiondata"></div>
+            <a href="session.html">Edit</a>
+
+            <br/>
+            <br/>
+            <button onclick="clearSession()">Clear All</button>
+        </fieldset>
+    </body>
+</html>

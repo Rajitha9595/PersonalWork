@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            let one=()=>{
+                let name=document.getElementById("fname").value;
+                document.getElementById("container").innerText=name.toLowerCase();
+            }
+
+            let two=()=>{
+                let name=document.getElementById("fname").value;
+                document.getElementById("container").innerText=name.toUpperCase();
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Javascript input and output using .value and innerText with lowee and uppercase example</h1>
+        <p>
+            Enter Your Full Name: <input type="text" id="fname"/>
+            <button onclick="one()">Print in small letter</button>
+            <button onclick="two()">Print in capital letter</button>
+        </p>
+        <h1 id="container"></h1>
+    </body>
+</html>

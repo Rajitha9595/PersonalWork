@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script>
+            let one=(input)=>{
+                console.log("You have enter: "+input)
+            }
+        </script>
+    </head>
+    <body onload="one('Welcome Back')">
+        <h1>Javascript keyboard event example</h1>
+        <p>
+            Onkey press: <input type="text" value="Apple" onkeypress="one(this.value)"/>
+        </p>
+
+        <p>
+            Onkey down: <input type="text" value="Apple" onkeydown="one(this.value)"/>
+        </p>
+
+        <p>
+            Onkey up: <input type="text" value="Apple" onkeyup="one(this.value)"/>
+        </p>
+
+        <p>
+            On focus: <input type="text" value="Apple" onfocus="one(this.value)"/>
+        </p>
+
+        <p>
+            On blur: <input type="text" value="Apple" onblur="one(this.value)"/>
+        </p>
+    </body>
+</html>
